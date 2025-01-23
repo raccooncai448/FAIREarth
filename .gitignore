@@ -1,0 +1,5 @@
+experiments/*
+!experiments/.gitkeep
+**/*.npy
+**/*.csv
+**/*.geojson
