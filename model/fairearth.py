@@ -9,16 +9,6 @@ from torch.utils.data import DataLoader
 from model.utils import ExperimentConfig, GridDataset, ExperimentTracker, PrintLossCallback
 from evalUtils.evaluation import masked_losses
 
-# TODO:
-# 1) Debug this new class -- can save everything for later, post empty github for now
-# 2) Re-run the experiments:
-# a -- Cross-validation
-# b -- Fine-tuning
-# c -- Latitude fine-tuning
-# d -- Different wavelet type fine-tuning (+ run-time)
-# e -- MAKE SURE TO SAVE PICTURES
-# 3) Think of some good figures !!
-
 class FAIREarth:
     """Main research framework for training and evaluation"""
     def __init__(self, save_dir: str = "experiments"):
