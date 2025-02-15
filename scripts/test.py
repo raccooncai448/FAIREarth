@@ -1,10 +1,16 @@
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+#sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+#sys.path.append('.')
+#sys.path.append('src')
+
+#sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+#sys.path.append('src')
 
 import json, yaml
 from datetime import datetime
-from model.fairearth import FAIREarth
+from fairearth.model.fairearth import FAIREarth
+#from model.fairearth import FAIREarth
 import numpy as np
 import torch.nn as nn
 import lightning as pl
@@ -13,22 +19,9 @@ from data import (
     LandOceanDataModule,
     ClimateDataModule
 )
-from model.utils import ExperimentConfig
+from fairearth.model.utils import ExperimentConfig
 import torch
-from locationencoder import LocationEncoder
-
-# # Initializing base model
-# with open('scripts/default_hparams.yaml', 'r') as file:
-#     hparams = yaml.safe_load(file)
-# #hparams['data']['meta_variable'] = 'CO2'
-# #hparams['regression'] = True
-# hparams['data']['num_samples'] = 5000
-
-# fairearth = FAIREarth()
-# module = LocationEncoder('wavelets', 'siren', hparams)
-# model = FAIREarth.initialize_model(input_size=None, preload_datasets=False, module=module)
-# fairearth.add_dataset(MetaDataModule(hparams), 'climate')
-# model.fit('climate', 100, verbose=True)
+from fairearth.locationencoder import LocationEncoder
 
 # Initialize framework
 framework = FAIREarth()

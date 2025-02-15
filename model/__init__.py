@@ -1,1 +1,0 @@
-from .fairearth import FAIREarth
